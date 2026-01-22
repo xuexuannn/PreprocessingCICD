@@ -1,0 +1,2 @@
+raw_path: data/raw/sample.csv
+processed_path: data/processed/clean.csv

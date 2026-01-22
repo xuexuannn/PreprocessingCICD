@@ -1,0 +1,7 @@
+{
+  "rows": 10,
+  "cols": 6,
+  "duplicates_dropped": 0,
+  "source": "data/raw/sample.csv",
+  "output": "data/processed/clean.csv"
+}

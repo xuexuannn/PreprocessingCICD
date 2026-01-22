@@ -1,0 +1,11 @@
+id,name,email,country,order_date,amount
+1,John Doe,john.doe@example.com,USA,2024-01-15,129.9
+2,Emily Tan,emily.tan@example.sg,Singapore,2024-02-01,88.5
+3,Michael Rossi,m.rossi@example.it,Italy,2023-12-28,45.0
+4,Sara Kim,sara.kim@example.kr,South Korea,2024-01-10,210.75
+5,Liam Patel,liam.patel@example.in,India,2024-02-05,99.99
+6,Olivia Wong,olivia.wong@example.hk,Hong Kong,2024-01-22,150.0
+7,Noah Müller,noah.muller@example.de,Germany,2023-12-30,79.0
+8,Ava Smith,ava.smith@example.com,USA,2024-01-18,59.95
+9,Daniel Lee,daniel.lee@example.au,Australia,2024-02-03,134.2
+10,Chloe Dubois,chloe.dubois@example.fr,France,2024-01-25,62.8
