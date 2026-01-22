@@ -1,0 +1,52 @@
+name: Data Preprocess
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  preprocess:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Optional quick lint (can omit if you want ultra-minimal)
+      - name: Basic syntax check
+        run: python -m pyflakes src || true
+
+      - name: Run preprocessing
+        run: |
+          python src/preprocess.py --config configs/preprocess.yaml
+
+      - name: Show artifact preview
+        run: |
+          echo "Head of cleaned file:"
+          head -n 20 data/processed/clean.csv || true
+          echo "Metadata:"
+          cat data/processed/clean.json || true
+
+      - name: Upload processed dataset
+        uses: actions/upload-artifact@v4
+        with:
+          name: processed-data
+          path: |
+            data/processed/clean.csv
+            data/processed/clean.json
+      
+      - name: Test with pytest
+        run: |
+          pytest
